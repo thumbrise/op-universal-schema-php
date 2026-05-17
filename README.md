@@ -1,8 +1,15 @@
-# OP vendor - Universal HTTP - PHP
+# OP Universal - Schema PHP
 
-PHP implementation of [Operation Protocol Universal HTTP](https://github.com/thumbrise/op-universal-vendor-http)
+PHP schema types for [Operation Protocol](https://github.com/thumbrise/op)
 
-## Example:
+## Install
+
+```shell
+composer require thumbrise/op-universal-schema
+```
+
+## Example
+
 ```php
 // TODO
 ```

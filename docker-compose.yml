@@ -1,0 +1,20 @@
+services:
+  php:
+    build:
+      args:
+        DOCKER_HOST_UID: ${DOCKER_HOST_UID:?}
+        DOCKER_HOST_GID: ${DOCKER_HOST_GID:?}
+      context: ./
+    environment:
+      XDG_CONFIG_HOME: "/app/.xdg"
+      PHP_IDE_CONFIG: "serverName=app"
+      COMPOSER_HOME: "/composer"
+    user: ${DOCKER_HOST_UID:?}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./:/app
+      - composer-cache:/composer
+
+volumes:
+  composer-cache:
