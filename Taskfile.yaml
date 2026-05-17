@@ -1,0 +1,25 @@
+#schema: https://taskfile.dev/schema.json
+version: '3.17'
+
+env:
+  DOCKER_HOST_UID:
+    sh: id -u
+  DOCKER_HOST_GID:
+    sh: id -g
+
+tasks:
+
+  c:
+    desc: Run Container
+    cmd: docker compose {{.CLI_ARGS}}
+
+  bash:
+    desc: Enter in php container via bash
+    interactive: true
+    cmd: task c -- run --rm -it php bash
+
+  lint:
+    desc: Lint
+    cmds:
+      - license-eye header fix
+      - task c -- run --rm -it php composer lint
