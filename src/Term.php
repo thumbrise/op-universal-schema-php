@@ -35,5 +35,7 @@ class Term
         /** Requires kind. @var list<Term>|null */
         public readonly ?array $of = null,
         public readonly array $trait = [],
+        /** Whether a present value may be null; absent or false forbids null. */
+        public readonly ?bool $nullable = null,
     ) {}
 }

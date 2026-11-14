@@ -3,6 +3,11 @@
     "description": "Operation Protocol Schema — PHP type definitions",
     "license": "Apache-2.0",
     "type": "library",
+    "config": {
+        "platform": {
+            "php": "8.1.0"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Thumbrise\\OP\\Universal\\Schema\\": "./src"
@@ -12,6 +17,7 @@
         "php": ">=8.1"
     },
     "scripts": {
+        "test": "@php vendor/bin/phpunit --testdox --colors=always",
         "lint": [
             "@php vendor/bin/php-cs-fixer fix"
         ],
@@ -20,6 +26,7 @@
         ]
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3"
+        "friendsofphp/php-cs-fixer": "^3",
+        "phpunit/phpunit": "^10.5"
     }
 }
